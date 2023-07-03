@@ -78,7 +78,9 @@ $(document).ready(function () {
         return strTime;
     }
 
-    $('.time').text(formatAMPM(new Date()));
+    setInterval(() => {
+        $('.time').text(formatAMPM(new Date()));
+    }, 1000);    
 
     // copy docs
     $('.copy-docs').on('click', function () {

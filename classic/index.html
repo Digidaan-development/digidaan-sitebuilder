@@ -8,8 +8,8 @@
     <meta name="author" content="Digidaan">
     <title>Digidaan IT Services | Classic</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="img/w95-icon.png">
-    <link rel="icon" type="image/png" href="img/w95-icon.png">
+    <link rel="icon" type="image/png" href="./img/w95-icon.png">
+    <link rel="icon" type="image/png" href="./img/w95-icon.png">
     <link rel="manifest" href="img/favicon/site.webmanifest">
     <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#2d89ef">
@@ -17,7 +17,8 @@
     <!-- Bootstrap CSS -->
     <link type="text/css" rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <!-- Pixel CSS -->
-    <link type="text/css" rel="stylesheet" href="css/classic.css">
+    <link type="text/css" rel="stylesheet" href="./css/classic.css">
+    <link rel="stylesheet" href="./css/scrollbar.css">
 </head>
 
 <body class="main-bg" style="background-color: #008081; height: 95vh; ">
@@ -28,68 +29,51 @@
         <!-- Desktop Icons -->
         <div class="ui-desktop ml-2">
             <div class="icon-container">
-                <div class="desktop-icon align-middle col-8 my-3" data-toggle="modal" data-target="#myModal">
+                <div class="desktop-icon align-middle col-8 my-3" onclick="openModal('profileModal')">
                     <img src="img/users-2.png" class="mx-auto" width="32" height="32" alt="Profile Icon">
                     <span class="icon-text ">Profile</span>
                 </div>
             </div>
             <div class="icon-container">
-                <div class="desktop-icon align-middle col-8 my-3" data-toggle="modal" data-target="#myModal">
+                <div class="desktop-icon align-middle col-8 my-3" onclick="openModal('aboutModal')">
                     <img src="img/help_question_mark-0.png" width="32" height="32" alt="About me Icon">
                     <span class="icon-text">About Me</span>
                 </div>
             </div>
             <div class="icon-container">
-                <div class="desktop-icon align-middle col-8 my-3" data-toggle="modal" data-target="#myModal">
+                <div class="desktop-icon align-middle col-8 my-3" onclick="openModal('projectModal')">
                     <img src="img/web_file_set-0.png" width="32" height="32" alt="Windows 95 icon">
                     <span class="icon-text">Projects</span>
                 </div>
             </div>
             <div class="icon-container">
-                <div class="desktop-icon align-middle col-8 my-3" data-toggle="modal" data-target="#myModal">
+                <div class="desktop-icon align-middle col-8 my-3" onclick="openModal('experienceModal')">
                     <img src="img/user_card.png" width="32" height="32" alt="Windows 95 icon">
                     <span class="icon-text ">Experience</span>
                 </div>
             </div>
             <div class="icon-container">
-                <div class="desktop-icon align-middle col-8 my-3" data-toggle="modal" data-target="#myModal">
+                <div class="desktop-icon align-middle col-8 my-3" onclick="openModal('contactModal')">
                     <img src="img/envelope_closed-0.png" width="32" height="32" alt="Windows 95 icon">
                     <span class="icon-text ">Contact</span>
                 </div>
             </div>
             <div class="icon-container">
-                <div class="desktop-icon align-middle col-8 my-3" data-toggle="modal" data-target="#myModal">
+                <div class="desktop-icon align-middle col-8 my-3" onclick="openModal('computerModal')">
                     <img src="img/computer-5.png" width="32" height="32" alt="Windows 95 icon">
                     <span class="icon-text ">My Computer</span>
                 </div>
             </div>
         </div>
 
-
-        <!-- Modal -->
-
-        <!-- <div class="modal fade" data-backdrop="false" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title" id="myModalLabel">Sucesso do cliente</h4>
-                    </div>
-                    <div class="modal-body">
-                       <iframe width="100%" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                </div>
-              </div>  -->
-
-
-        <div class="modal w95-window card card-tertiary w-auto h-auto" data-backdrop="false" id="myModal" tabindex="-1"
-            role="dialog" aria-labelledby="myModalLabel">
+        <!-- Profile Modal -->
+        <div class="modal w95-window card card-tertiary w-auto h-auto" onclick="selectModal('profileModal')"
+            data-backdrop="false" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel">
             <div class="card-header">
-                <span class="icon icon-xs w95-folder"></span>
+                <img class="icon icon-xs w95-folder" src="img/users-2.png" />
                 <span class="ml-4">Profile</span>
                 <button class="close btn close-button px-1 py-1  h-100 w95-modal-close" type="button"
-                    data-dismiss="modal" aria-label="Close">X</button>
+                    data-dismiss="modal" onclick="closeModal('profileModal')" aria-label="Close">X</button>
                 <button class="close btn minimize-button px-2 py-1 mr-1 h-100 w95-modal-close" type="button"
                     data-dismiss="modal" aria-label="Close">-</button>
 
@@ -116,27 +100,527 @@
         </div>
 
 
+        <!-- About Modal -->
+        <div class="modal w95-window card card-tertiary w-auto h-75 mh-75" onclick="selectModal('aboutModal')"
+            data-backdrop="false" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel">
+            <div class="card-header">
+                <img class="icon icon-xs w95-folder" src="img/help_question_mark-0.png" />
+                <span class="ml-4">About Me</span>
+                <button class="close btn close-button px-1 py-1  h-100 w95-modal-close" type="button"
+                    data-dismiss="modal" onclick="closeModal('aboutModal')" aria-label="Close">X</button>
+                <button class="close btn minimize-button px-2 py-1 mr-1 h-100 w95-modal-close" type="button"
+                    data-dismiss="modal" aria-label="Close">-</button>
 
+            </div>
+            <div class="card-body">
+                <div class="section-header bg-primary-app pb-0">
+                    <div class="container">
+                        <div class="row">
+                            <span class="display-5 weight-bold my-4">About Me</span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 text-left text-md-right">
+                                <p class="lead fw-bold text-dark">Hi, my name is <span class="weight-bold"> Daan van
+                                        Geloven</span> and I am a <span class="weight-bold">Software Developer</span>
+                                    based in the Netherlands. I am a young professional and graduated with a degree in
+                                    software development in 2021.</p>
+                            </div>
+                            <div class="col-md-4">
+                                <p>In addition to my studies, I currently work part-time as an identity and access
+                                    management developer for Jumbo supermarkets. I am passionate about using technology
+                                    to solve problems and am always looking for new challenges and opportunities to
+                                    learn and grow as a developer.</p>
+                                <p class="d-none d-lg-block">I'm specialized in creating custom software solutions that
+                                    are fast, smart, and simple. My goal is to help businesses like yours streamline
+                                    their workflow, maximize productivity, and minimize complexity with cutting-edge
+                                    software solutions. </p>
+                            </div>
+                            <div class="col-md-4">
+                                <p>Whether you need a new website, a custom app, or help with hosting and email systems,
+                                    I've got you covered. Take a look around and see how I can help elevate your
+                                    business to the next level.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <span class="display-5 weight-bold my-4">My Interests</span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 text-left">
+                                <h3>Golf</h3>
+                                <img src="img/golf.png" class="mx-auto interest-img" alt="Golf">
+                                <p class="lead fw-bold text-dark">Since I first swung a club in september 2022 I have
+                                    been infatuated with the game of golf.</p>
+                                <p class="lead fw-bold text-dark">You can often catch me on the course or practicing
+                                    away. If you want to discuss any opportunities with me I'll always be happy to do it
+                                    during a game of golf.</p>
+                            </div>
+                            <div class="col-md-4">
+                                <h3>Coffee</h3>
+                                <img src="img/coffee.png" class="d-block mx-auto interest-img" alt="Coffee">
+                                <p class="lead fw-bold text-dark">
+                                    A hobby of mine is perfecting my Espresso abilities.
+                                    I'm currently rocking a Gaggia Classic Pro with tons of upgradres
+                                    (9 bar springs, VST Baskets, Bottomless PF etc...) and a Smart Grinder Pro.
+                                    I'm also always experimenting with different beans from local roasters.</p>
 
+                            </div>
+                            <div class="col-md-4">
+                                <h3>Tinkering</h3>
+                                <img src="img/solder.png" class="d-block mx-auto interest-img" alt="Coffee">
+                                <p class="lead fw-bold text-dark">
+                                    On occasion I love to tinker on small hobby projects. For example recently I made a
+                                    sim racing handbrake from an old potentiometer pedal and an arduino nano. Or like
+                                    the time when my mouse scroll wheel started giving occasional wrong inputs so then I
+                                    wrote new mouse drivers in c++ with automatic bad scroll input rejection. </p>
+                                <p class="lead fw-bold text-dark"> Solving small inconveniences with over-engineered
+                                    solutions is something I enjoy very much.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Modal -->
+        <div class="modal w95-window card card-tertiary w-auto h-auto" onclick="selectModal('projectModal')"
+            data-backdrop="false" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel">
+            <div class="card-header">
+                <img class="icon icon-xs w95-folder" src="img/web_file_set-0.png" />
+                <span class="ml-4">Exploring - Projects</span>
+                <button onclick="closeModal('projectModal')"
+                    class="close btn close-button px-1 py-1  h-100 w95-modal-close" type="button" data-dismiss="modal"
+                    aria-label="Close">X</button>
+                <button class="close btn minimize-button px-2 py-1 mr-1 h-100 w95-modal-close" type="button"
+                    data-dismiss="modal" aria-label="Close">-</button>
+
+            </div>
+            <div class="card-body mt-0 pt-0">
+                <!-- Windows 95 explorer file bar File|Edit|View|Tools|Help row -->
+                <div class="row mt-0 h-10 w95-explorer-bar">
+                    <div class="w95-explorer-bar-item">
+                        <span class="ml-2">File</span>
+                    </div>
+                    <div class="w95-explorer-bar-item">
+                        <span class="ml-2">Edit</span>
+                    </div>
+                    <div class="w95-explorer-bar-item">
+                        <span class="ml-2">View</span>
+                    </div>
+                    <div class="w95-explorer-bar-item">
+                        <span class="ml-2">Tools</span>
+                    </div>
+                    <div class="w95-explorer-bar-item">
+                        <span class="ml-2">Help</span>
+                    </div>
+                </div>
+
+                <!-- Windows 95 explorer search bar row -->
+                <div class="row mt-1 ml-2 h-10 w95-explorer-bar">
+                    <div class="w95-explorer-bar-item">
+                        <input type="text" class="w95-explorer-bar-search-input" placeholder="Search...">
+                        <button class="w95-explorer-bar-search-button">
+                            <img src="./img/search_directory-0.png" class="search-icon w95-search"></span>
+                        </button>
+
+                    </div>
+                </div>
+                <div class="row bg-white border my-1 mx-1 file-grid">
+                    <div class="col-6 col-md-4 col-lg-3 explorer-file mx-1">
+                        <div class="col align-middle w95-file-icon">
+                            <img src="./img/pvsafe.png" class="w95-file-icon-img mx-auto row">
+                            <span class="d-block w-auto text-center mx-auto row pt-1">PVSafe</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 explorer-file mx-1">
+                        <div class="col align-middle w95-file-icon">
+                            <img src="./img/game_solitaire-0.png" class="w95-file-icon-img mx-auto row">
+                            <span class="d-block w-auto text-center mx-auto row pt-1">Summa College</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 explorer-file mx-1">
+                        <div class="col align-middle w95-file-icon">
+                            <img src="./img/excavator.png" class="w95-file-icon-img mx-auto row">
+                            <span class="d-block w-auto text-center mx-auto row pt-1">PBMA</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 explorer-file mx-1">
+                        <div class="col align-middle w95-file-icon">
+                            <img src="./img/pgt.png" class="w95-file-icon-img mx-auto row">
+                            <span class="d-block w-auto text-center mx-auto row pt-1">PGT Veldhoven</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 explorer-file mx-1">
+                        <div class="col align-middle w95-file-icon">
+                            <img src="./img/address_book_home.png" class="w95-file-icon-img mx-auto row">
+                            <span class="d-block w-auto text-center mx-auto row pt-1">Wimereux</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 explorer-file mx-1">
+                        <div class="col align-middle w95-file-icon">
+                            <img src="./img/logo-w95.png" class="w95-file-icon-img mx-auto row">
+                            <span class="d-block w-auto text-center mx-auto row pt-1">Digidaan</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 explorer-file mx-1">
+                        <div class="col align-middle w95-file-icon">
+                            <img src="./img/help_question_mark-0.png" class="w95-file-icon-img mx-auto row">
+                            <span class="d-block w-auto text-center mx-auto row pt-1">Your project</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Modal -->
+        <div class="modal w95-window card card-tertiary w-auto h-auto" onclick="selectModal('experienceModal')"
+            data-backdrop="false" id="experienceModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel">
+            <div class="card-header">
+                <img class="icon icon-xs w95-folder" src="img/user_card.png" />
+                <span class="ml-4">Experience</span>
+                <button onclick="closeModal('experienceModal')"
+                    class="close btn close-button px-1 py-1  h-100 w95-modal-close" type="button" data-dismiss="modal"
+                    aria-label="Close">X</button>
+                <button class="close btn minimize-button px-2 py-1 mr-1 h-100 w95-modal-close" type="button"
+                    data-dismiss="modal" aria-label="Close">-</button>
+
+            </div>
+            <div class="card-body">
+                <div class="section-header bg-primary-app pb-0">
+                    <div class="container">
+                        <div class="row justify-content-center text-center">
+                            <div class="col-lg-8">
+                                <img src="https://i.pravatar.cc"
+                                    class="rounded-circle img-thumbnail image-lg border-gray-300 p-2"
+                                    alt="Profile image">
+                                <div class="mt-4 mb-5">
+                                    <h2 class="display-3 fw-normal my-4">Hello, I’m <span
+                                            class="text-through fw-bold">Daan van Geloven</span> a Web Wizard.</h2>
+                                    <h5 class="fw-normal text-gray">Independent <span
+                                            class="fw-bold text-dark">Full-Stack Developer</span></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mb-0 mb-md-6">
+                    <!-- <div class="col-6 col-md-3 text-center mb-5 mb-md-0">
+                        <div class="mb-2 mb-md-3">
+                            <svg class="small-image" viewBox="0 0 24 25" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M19.2642 3.21338L3.04597 6.7525L6.71301 23.5569L22.9312 20.0178L19.2642 3.21338Z"
+                                    stroke="#f7931e" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M18.0418 5.52346L5.43853 8.27375L7.63449 18.3368L20.2378 15.5866L18.0418 5.52346Z"
+                                    stroke="#f7931e" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M17.5 0.5H0.5V17.5H17.5V0.5Z" stroke="#f7931e" stroke-miterlimit="10"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M5.50001 5V13.3" stroke="#f7931e" stroke-miterlimit="10"
+                                    stroke-linejoin="round" />
+                                <path d="M12.5 5V13.3" stroke="#f7931e" stroke-miterlimit="10"
+                                    stroke-linejoin="round" />
+                                <path d="M2.49999 10.5H15.3" stroke="#f7931e" stroke-miterlimit="10"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M15.5 8.5C14 8.5 12.5 6 12.5 6C12.5 6 11.5 8.5 9 8.5C6.5 8.5 5.5 6 5.5 6C5.5 6 4 8.5 2.5 8.5"
+                                    stroke="#f7931e" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M15.5 2.5H2.49999V13.5H15.5V2.5Z" stroke="#f7931e"
+                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <h2 class="h4">Design</h2>
+                    </div>
+                    <div class="col-6 col-md-3 text-center mb-5 mb-md-0">
+                        <div class="mb-2 mb-md-3">
+                            <svg class="small-image" viewBox="0 -1 22 23" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.5 1.49999H1.49995V19.5H20.5V1.49999Z" stroke="#f7931e"
+                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M21.5 18.5H19.5V20.5H21.5V18.5Z" stroke="#f7931e"
+                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M2.5 18.5H0.499995V20.5H2.5V18.5Z" stroke="#f7931e"
+                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M21.5 0.5H19.5V2.5H21.5V0.5Z" stroke="#f7931e" stroke-miterlimit="10"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M2.5 0.5H0.499995V2.5H2.5V0.5Z" stroke="#f7931e" stroke-miterlimit="10"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M11 13.5H18" stroke="#f7931e" stroke-miterlimit="10"
+                                    stroke-linejoin="round" />
+                                <path d="M11 15.5H17" stroke="#f7931e" stroke-miterlimit="10"
+                                    stroke-linejoin="round" />
+                                <path d="M8.5 12.5H4.50001V16.5H8.5V12.5Z" stroke="#f7931e"
+                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M11 8.5H17" stroke="#f7931e" stroke-miterlimit="10"
+                                    stroke-linejoin="round" />
+                                <path d="M11 6.5H18" stroke="#f7931e" stroke-miterlimit="10"
+                                    stroke-linejoin="round" />
+                                <path d="M8.5 8.5H4.5L6.5 5L8.5 8.5Z" stroke="#f7931e" stroke-miterlimit="10"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <h2 class="h4">Prototyping</h2>
+                    </div>
+                    <div class="col-6 col-md-3 text-center mb-5 mb-md-0 mt-auto">
+                        <div class="mb-2 mb-md-3">
+                            <svg class="small-image" viewBox="0 -1 36 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.1 3H8.4L15.8 11.8L17 10.2" />
+                                <path d="M12.1 3H8.4L15.8 11.8L17 10.2" stroke="#f7931e" stroke-miterlimit="10"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M13 8.5H5.50001" stroke="#f7931e" stroke-miterlimit="10"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M1.59999 5.5H1.00001" stroke="#f7931e" stroke-miterlimit="10"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M10.5 5.5H3.59996" stroke="#f7931e" stroke-miterlimit="10"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M8.69999 3H5.00001" stroke="#f7931e" stroke-miterlimit="10"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M10.3 0.5H20.2L28.9375 11.6H18.2L10.3 0.5Z" stroke="#f7931e"
+                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M25 6.49999L29 11.5L31.6 0.799988L25 6.49999Z" stroke="#f7931e"
+                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M31.6 0.799988L31 4.49999L35 4.49999L31.6 0.799988Z" stroke="#f7931e"
+                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M29 11.5H18.4296L14 19.5L29 11.5Z" stroke="#f7931e"
+                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M14 19.5L15.8 11.6L17 10L18 12L14 19.5Z" stroke="#f7931e"
+                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <h2 class="h4">Development</h2>
+                    </div>
+                    <div class="col-6 col-md-3 text-center mb-5 mb-md-0">
+                        <div class="mb-2 mb-md-3">
+                            <svg class="small-image" viewBox="0 0 23 25" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.1 0.799985H2.90003V20.2H19.1V0.799985Z" stroke="#f7931e"
+                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M17.2 0.499994H1.49999V20.5H17.2V0.499994Z" stroke="#f7931e"
+                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M3.10001 3.99995C3.32093 3.99995 3.50001 3.82087 3.50001 3.59995C3.50001 3.37904 3.32093 3.19996 3.10001 3.19996C2.8791 3.19996 2.70002 3.37904 2.70002 3.59995C2.70002 3.82087 2.8791 3.99995 3.10001 3.99995Z"
+                                    stroke="#f7931e" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M3.1 3.49997L0.499994 2.09998H1.49999" stroke="#f7931e"
+                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M3.10001 7.70003C3.32093 7.70003 3.50001 7.52094 3.50001 7.30002C3.50001 7.07911 3.32093 6.90003 3.10001 6.90003C2.8791 6.90003 2.70002 7.07911 2.70002 7.30002C2.70002 7.52094 2.8791 7.70003 3.10001 7.70003Z"
+                                    stroke="#f7931e" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M3.1 7.10001L0.499994 5.70002H1.49999" stroke="#f7931e"
+                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M3.10001 11.3C3.32093 11.3 3.50001 11.1209 3.50001 10.9C3.50001 10.6791 3.32093 10.5 3.10001 10.5C2.8791 10.5 2.70002 10.6791 2.70002 10.9C2.70002 11.1209 2.8791 11.3 3.10001 11.3Z"
+                                    stroke="#f7931e" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M3.1 10.8L0.499994 9.49999H1.49999" stroke="#f7931e"
+                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M3.10001 15C3.32093 15 3.50001 14.8209 3.50001 14.6C3.50001 14.3791 3.32093 14.2 3.10001 14.2C2.8791 14.2 2.70002 14.3791 2.70002 14.6C2.70002 14.8209 2.8791 15 3.10001 15Z"
+                                    stroke="#f7931e" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M3.1 14.5L0.499994 13.2H1.49999" stroke="#f7931e"
+                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M3.10001 18.7C3.32093 18.7 3.50001 18.5209 3.50001 18.3C3.50001 18.0791 3.32093 17.9 3.10001 17.9C2.8791 17.9 2.70002 18.0791 2.70002 18.3C2.70002 18.5209 2.8791 18.7 3.10001 18.7Z"
+                                    stroke="#f7931e" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M3.1 18.3L0.499994 16.9H1.49999" stroke="#f7931e"
+                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M11.1 19.7L10.7 22.9L11.1 23.125L11.5 23.3L14 21L14.1 20.8" />
+                                <path d="M11.1 19.7L10.7 22.9L11.1 23.125L11.5 23.3L14 21L14.1 20.8"
+                                    stroke="#f7931e" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M22 5.79999L20.9 7.79999L18.4 6.4C18.4 6.4 19.2 4.49999 19.5 4.49999C19.8 4.49999 19.8 4.5 20.6 4.4C21.4 4.3 21.7 4.5 21.7 4.6C22 4.9 22.2 5.39999 22 5.79999Z"
+                                    stroke="#f7931e" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M17.6602 7.38133L20.4755 8.90229L21.2835 7.40662L18.4682 5.88566L17.6602 7.38133Z"
+                                    stroke="#f7931e" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M17.7 7.40002L20.4 8.90002L14 21L11.1 19.7L17.7 7.40002Z"
+                                    stroke="#f7931e" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M10.5 24.3L10.7 23C11 23 11.3 23.1 11.5 23.4L10.5 24.3Z" fill="#C1C7C4"
+                                    stroke="#f7931e" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M6.20002 5.4C6.80002 5.2 7.40002 4.8 7.70002 4.3C7.60002 5 8.60001 5.50001 9.30001 5.20001C10 4.90001 10.4 4.19999 10.6 3.49999C10.4 3.89999 10.5 4.5 10.9 4.8C11.2 5.1 11.8 5.19999 12.2 4.99999C12.4 4.89999 12.5 4.8 12.7 4.8C12.9 4.8 13 5 13.2 5.1C13.7 5.5 14.6 5.5 15.1 5.1"
+                                    stroke="#f7931e" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <h2 class="h4">Support</h2>
+                    </div> -->
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Contact Modal -->
+        <div class="modal w95-window card card-tertiary mail-card  sm:w-auto w-full  h-auto" data-backdrop="false"
+            onclick="selectModal('contactModal')" id="contactModal" tabindex="-1" role="dialog"
+            aria-labelledby="profileModalLabel">
+            <div class="card-header">
+                <img class="icon icon-xs w95-folder" src="img/envelope_closed-0.png" />
+                <span class="ml-4">New Message</span>
+                <button class="close btn close-button px-1 py-1  h-100 w95-modal-close" type="button"
+                    data-dismiss="modal" onclick="closeModal('contactModal')" aria-label="Close">X</button>
+                <button class="close btn minimize-button px-2 py-1 mr-1 h-100 w95-modal-close" type="button"
+                    data-dismiss="modal" aria-label="Close">-</button>
+
+            </div>
+            <div class="card-body mail-body">
+                <!-- Windows 95 explorer file bar File|Edit|View|Tools|Help row -->
+                <div class="row mt-0 h-10 ml-1 w95-explorer-bar">
+                    <div class="w95-explorer-bar-item">
+                        <span class="ml-2">File</span>
+                    </div>
+                    <div class="w95-explorer-bar-item">
+                        <span class="ml-2">Edit</span>
+                    </div>
+                    <div class="w95-explorer-bar-item">
+                        <span class="ml-2">View</span>
+                    </div>
+                    <div class="w95-explorer-bar-item">
+                        <span class="ml-2">Tools</span>
+                    </div>
+                    <div class="w95-explorer-bar-item">
+                        <span class="ml-2">Help</span>
+                    </div>
+                </div>
+
+                <div class="row bg-mail  pl-10 pr-25  w-full border">
+                    <div class=" bg-white mx-2 my-2 px-0 col d-flex flex-column justify-content-between ">
+                        <div class="bg-mail d-flex flex-row justify-content-between ">
+                            <label for="default" class="my-auto mx-auto px-auto d-flex bg-mail">To:</label>
+                            <input disabled id="default" value="Daan van Geloven <daan@digidaan-it.nl>" type="text"
+                                class="form-control w-75  d-flex mb-1" />
+                        </div>
+                        <div class="bg-mail d-flex flex-row justify-content-between ">
+                            <label for="default" class="my-auto mx-auto d-flex bg-mail">From:</label>
+                            <input id="default" placeholder="Your email here" type="email"
+                                class="form-control w-75  d-flex my-1" />
+                        </div>
+                        <div class="bg-mail d-flex flex-row justify-content-between ">
+                            <label for="default" class="my-auto mx-auto d-flex bg-mail">Subject:</label>
+                            <input id="default" placeholder="Message Subject" type="email"
+                                class="form-control w-75  d-flex mt-1" />
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col ">
+                    <label for="textarea" class="mr-3">Your Message:</label>
+                    <textarea id="textarea" class="form-control w-full" cols="30" rows="10"></textarea>
+                </div>
+                <!-- <div class="form-group d-flex justify-content-end mb-4">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox">
+                            <span class="form-check-x"></span>
+                            <span class="form-check-sign"></span>
+                            I agree to the terms and conditions
+                        </label>
+                    </div>
+                </div> -->
+                <div class="d-flex justify-content-end">
+                    <div class="d-flex">
+                        <button class="btn btn-sm mr-3 mt-1 btn-primary border-dark" type="button">
+                            <img src="img/sendmail.png" class="mail-send-icon mr-1 my-auto" /><span
+                                class="btn-text">Send</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Computer Modal -->
+        <div class="modal w95-window card card-tertiary w-auto h-auto" data-backdrop="false"
+            onclick="selectModal('computerModal')" id="computerModal" tabindex="-1" role="dialog"
+            aria-labelledby="profileModalLabel">
+            <div class="card-header">
+                <img class="icon icon-xs w95-folder" src="img/computer-5.png" />
+                <span class="ml-4">My Computer</span>
+                <button onclick="closeModal('computerModal')"
+                    class="close btn close-button px-1 py-1  h-100 w95-modal-close" type="button" data-dismiss="modal"
+                    aria-label="Close">X</button>
+                <button class="close btn minimize-button px-2 py-1 mr-1 h-100 w95-modal-close" type="button"
+                    data-dismiss="modal" aria-label="Close">-</button>
+
+            </div>
+            <div class="card-body">
+                <div class="section-header bg-primary-app pb-0">
+                    <div class="container">
+                        <div class="row justify-content-center text-center">
+                            <div class="col-lg-8">
+                                <img src="https://i.pravatar.cc"
+                                    class="rounded-circle img-thumbnail image-lg border-gray-300 p-2"
+                                    alt="Profile image">
+                                <div class="mt-4 mb-5">
+                                    <h2 class="display-3 fw-normal my-4">Hello, I’m <span
+                                            class="text-through fw-bold">Daan van Geloven</span> a Web Wizard.</h2>
+                                    <h5 class="fw-normal text-gray">Independent <span
+                                            class="fw-bold text-dark">Full-Stack Developer</span></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </main>
+
+    <!-- Windows 95 style start menu -->
+    <div class="hidden w95-startmenu">
+        <div class="row">
+            <div class="col-2 pr-0 w-100 flex">
+                <div class="w95-startmenu-sideways-text w-100  pt-2 pb-5 mx-auto">
+                    <span class="weight-bold">Digidaan DaanOS <span class="text-white">'02</span> </span>
+                </div>
+            </div>
+            <div class="col-10  w-100 pl-0">
+                <div class="w-95-start-list w-100 pl-0">
+                    <div onclick="openModal('profileModal')" class="w-95-start-item flex">
+                        <img width='20' src="./img/users-2.png" /> Profile
+                    </div>
+                    <div onclick="openModal('projectModal')" class="w-95-start-item flex">
+                        <img width='20' src="./img/web_file_set-0.png" /> Projects
+                    </div>
+                    <div onclick="openModal('aboutModal')" class="w-95-start-item flex">
+                        <img width='20' src="./img/help_question_mark-0.png" /> About Me
+                    </div>
+                    <div onclick="openModal('experienceModal')" class="w-95-start-item flex">
+                        <img width='20' src="./img/user_card.png" /> Experience
+                    </div>
+                    <div onclick="openModal('contactModal')" class="w-95-start-item flex">
+                        <img width='20' src="./img/envelope_closed-0.png" /> Contact
+                    </div>
+                    <div onclick="openModal('computerModal')" class="w-95-start-item flex">
+                        <img width='20' src="./img/computer-5.png" /> This Computer
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Nav Bar -->
     <div id="navbar-main"
         class="navbar d-flex flex-row align-items-center navbar-main navbar-expand-lg navbar-dark justify-content-between navbar-bottom">
-        <ul class="navbar-nav navbar-nav-hover flex-row align-items-center">
+        <ul id="navbar" class="navbar-nav navbar-nav-hover flex-row align-items-center">
             <li class="nav-item">
-                <a href="#" class="nav-link" role="button">
+                <a id="menuToggle" href="#" class="nav-link" role="button">
                     <span class="nav-link-inner-text"><img src="./img/w95-icon.png" width="25"> Start</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link" role="button">
-                    <span class="nav-link-inner-text">📕 About me</span>
-                </a>
-            </li>
-
-
 
         </ul>
         <div class="time text-center">
@@ -155,10 +639,9 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
 
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script> -->
-    <!-- pixel JS -->
+
+
+    <!-- Custom JS -->
     <script src="js/pixel.js"></script>
     <script src="js/classic.js"></script>
 

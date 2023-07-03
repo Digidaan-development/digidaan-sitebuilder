@@ -8089,6 +8089,7 @@ footer {
     padding: 8px 1px;
     font-size: 12px;
     box-sizing: unset;
+    cursor: pointer;
 }
 
 .desktop-icon div {
@@ -8111,3 +8112,157 @@ footer {
     position: relative;
 }
 
+.weight-bold{
+    font-weight: bold;
+}
+
+.w95-explorer-bar-item{
+    padding: 0 0.25rem;
+    font-size: 10px;
+    user-select: none;
+}
+
+.search-icon{
+    width: 15px;
+    height: 15px;
+}
+
+.project-list{
+    overflow: scroll;
+    height: 300px;
+}
+.w95-file-icon-img{
+    height: 30px;
+    width: 30px;
+}
+.explorer-file{
+    /* padding: 0.25rem;
+    font-size: 10px;
+    user-select: none; */
+
+    text-align: center;
+    vertical-align: top;
+    width: 72px;
+    z-index: 0;
+    line-height: 12px;
+    margin: 0;
+    padding: 8px 1px;
+    font-size: 12px;
+    box-sizing: unset;
+    cursor: pointer;
+    
+}
+.file-grid{
+    border-top: 2px solid #FCFCFC;
+    border-left: 2px solid #FCFCFC;
+    border-bottom: 2px solid #08080E;
+    border-right: 2px solid #08080E;
+    min-height: 300px;
+}
+.flex-column{
+    flex-direction: column !important;
+}
+.bg-mail{
+    background-color: #808080;
+}
+.mail-send-icon{
+    width: 20px;
+}
+
+.mail-card{
+    max-width: 500px;
+}
+
+.interest-img{
+    height: 128px;
+    width: auto;
+}
+
+.selectedModal{
+    z-index: 3000 !important;
+}
+
+.card-body{
+    overflow-y: auto;
+    height: 100%;
+}
+
+.modal-open .modal{
+    overflow-y: clip !important;
+}
+
+.nav-link{
+    border: none;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-tab {
+       display: none;
+    }
+}
+    
+.w95-startmenu-sideways-text{
+    writing-mode: vertical-rl;
+    text-align: start;
+    transform: rotate(180deg);
+    font-size: 16px;
+    padding: 0 0.25rem;
+    user-select: none;
+    /* height: 346px; */
+    background-color: #808080;
+    color: #bfbfbf;
+    position: relative;
+    height: fit-content;
+}
+
+.bg-blue-w95{
+    background-color: #0078D7;
+}
+.hidden{
+    display: none;
+}
+.w95-startmenu{
+
+    width: 350px;
+    border-top: 2px solid #FCFCFC;
+    border-left: 2px solid #FCFCFC;
+    border-bottom: 2px solid #08080E;
+    border-right: 2px solid #08080E;
+    background-color: #c0c0c0;
+
+    position: absolute;
+    bottom: 38px;
+    box-sizing: border-box;
+}
+
+.w-95-start-item{
+    user-select: none;
+    vertical-align: top;
+    z-index: 0;
+    line-height: 12px;
+    padding: 12px 2px;
+    font-size: 14px;
+    cursor: pointer;
+
+}
+
+.w-95-start-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    height: 100%;	
+}
+
+.w-95-start-item:hover{
+    background-color: #000080;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+
+}
+    
+
+*{
+    height: auto;
+}
