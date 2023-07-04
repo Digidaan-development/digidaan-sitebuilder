@@ -8258,11 +8258,30 @@ footer {
     color: white;
 }
 
-@media screen and (max-width: 768px) {
-
+@media screen and (min-width: 768px) {
+ .sm-w-75{
+    width: 75% !important; 
+ }
+ .sm-w-50{
+    width: 50% !important; 
+ }
+ .sm-w-100{
+    width: 100% !important; 
+ }
 }
     
 
 *{
     height: auto;
+}
+
+.w95-border{
+    border-top: 2px solid #FCFCFC;
+    border-left: 2px solid #FCFCFC;
+    border-bottom: 2px solid #08080E;
+    border-right: 2px solid #08080E;
+}
+
+.fs-14 p{
+    font-size: 12px;
 }

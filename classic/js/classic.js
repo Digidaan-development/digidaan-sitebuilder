@@ -47,7 +47,26 @@ const modalOptions = {
     'icon': 'envelope_closed-0.png',
     'title': 'Contact'
   },
-
+  'pvsafeModal': {
+    'icon': 'pvsafe.png',
+    'title': 'Pvsafe'
+  },
+  'summaModal': {
+    'icon': 'game_solitaire-0.png',
+    'title': 'Summa College'
+  },
+  'pbmaModal': {
+    'icon': 'excavator.png',
+    'title': 'PBMA'
+  },
+  'pgtModal': {
+    'icon': 'pgt.png',
+    'title': 'PGT Veldhoven'
+  },
+  'wimereuxModal': {
+    'icon': 'address_book_home.png',
+    'title': 'Wimereux'
+  }
 }
 
 // Define an array to store the modals that are currently open
@@ -56,12 +75,12 @@ let openModals = [];
 // This function will open a modal and add it to the openModals array
 function openModal(modalId) {
   $('#' + modalId).modal('show')
-  selectModal(modalId)
   // if openmodals does not contain the current id then add it to the array
   if (!openModals.includes(modalId)) {
     openModals.push(modalId)
     updateTaskbar()
   }
+  selectModal(modalId)
 }
 
 // This function will close a modal and remove it from the openModals array
@@ -77,7 +96,7 @@ function closeModal(modalId) {
 function updateTaskbar() {
   let taskbarHtml = `
   <li class="nav-item">
-                <a href="#" class="nav-link" role="button">
+                <a id="menuToggle" class="nav-link" role="button">
                     <span class="nav-link-inner-text"><img src="./img/w95-icon.png" width="25"> Start</span>
                 </a>
             </li>
@@ -103,6 +122,5 @@ function selectModal(modalId) {
     document.querySelector('#' + otherModals).classList.remove('selectedModal')
   })
   // open the selected modal
-  console.log(modalId)
   document.querySelector('#' + modalId).classList.add('selectedModal')
 }
