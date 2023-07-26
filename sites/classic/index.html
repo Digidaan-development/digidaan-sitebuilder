@@ -22,6 +22,8 @@
 </head>
 
 <body class="main-bg" style="background-color: #008081; height: 95vh; ">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <!-- Logo -->
     <img src="img/logo-w95.png" class="spinning-logo" alt="Digidaan logo" class="logo" />
     <main>
@@ -83,7 +85,7 @@
                     <div class="container">
                         <div class="row justify-content-center text-center">
                             <div class="col-lg-8">
-                                <img src="https://i.pravatar.cc"
+                                <img src="./img/portrait.png"
                                     class="rounded-circle img-thumbnail image-lg border-gray-300 p-2"
                                     alt="Profile image">
                                 <div class="mt-4 mb-5">
@@ -425,53 +427,55 @@
                     data-dismiss="modal" aria-label="Close">-</button>
 
             </div>
-            <div class="card-body mail-body">
-                <!-- Windows 95 explorer file bar File|Edit|View|Tools|Help row -->
-                <div class="row mt-0 h-10 ml-1 w95-explorer-bar">
-                    <div class="w95-explorer-bar-item">
-                        <span class="ml-2">File</span>
-                    </div>
-                    <div class="w95-explorer-bar-item">
-                        <span class="ml-2">Edit</span>
-                    </div>
-                    <div class="w95-explorer-bar-item">
-                        <span class="ml-2">View</span>
-                    </div>
-                    <div class="w95-explorer-bar-item">
-                        <span class="ml-2">Tools</span>
-                    </div>
-                    <div class="w95-explorer-bar-item">
-                        <span class="ml-2">Help</span>
-                    </div>
-                </div>
-
-                <div class="row bg-mail  pl-10 pr-25  w-full border">
-                    <div class=" bg-white mx-2 my-2 px-0 col d-flex flex-column justify-content-between ">
-                        <div class="bg-mail d-flex flex-row justify-content-between ">
-                            <label for="default" class="my-auto mx-auto px-auto d-flex bg-mail">To:</label>
-                            <input disabled id="default" value="Daan van Geloven <daan@digidaan-it.nl>" type="text"
-                                class="form-control w-75  d-flex mb-1" />
+            <form action="../../sendmail.php" method="post" id="contact-form">
+                <div class="card-body mail-body">
+                    <!-- Windows 95 explorer file bar File|Edit|View|Tools|Help row -->
+                    <div class="row mt-0 h-10 ml-1 w95-explorer-bar">
+                        <div class="w95-explorer-bar-item">
+                            <span class="ml-2">File</span>
                         </div>
-                        <div class="bg-mail d-flex flex-row justify-content-between ">
-                            <label for="default" class="my-auto mx-auto d-flex bg-mail">From:</label>
-                            <input id="default" placeholder="Your email here" type="email"
-                                class="form-control w-75  d-flex my-1" />
+                        <div class="w95-explorer-bar-item">
+                            <span class="ml-2">Edit</span>
                         </div>
-                        <div class="bg-mail d-flex flex-row justify-content-between ">
-                            <label for="default" class="my-auto mx-auto d-flex bg-mail">Subject:</label>
-                            <input id="default" placeholder="Message Subject" type="email"
-                                class="form-control w-75  d-flex mt-1" />
+                        <div class="w95-explorer-bar-item">
+                            <span class="ml-2">View</span>
+                        </div>
+                        <div class="w95-explorer-bar-item">
+                            <span class="ml-2">Tools</span>
+                        </div>
+                        <div class="w95-explorer-bar-item">
+                            <span class="ml-2">Help</span>
+                        </div>
+                    </div>
+
+                    <div class="row bg-mail  pl-10 pr-25  w-full border">
+                        <div class=" bg-white mx-2 my-2 px-0 col d-flex flex-column justify-content-between ">
+                            <div class="bg-mail d-flex flex-row justify-content-between ">
+                                <label for="default" class="my-auto mx-auto px-auto d-flex bg-mail">To:</label>
+                                <input disabled id="default" value="Daan van Geloven <daan@digidaan-it.nl>" type="text"
+                                    class="form-control w-75  d-flex mb-1" />
+                            </div>
+                            <div class="bg-mail d-flex flex-row justify-content-between ">
+                                <label for="default" class="my-auto mx-auto d-flex bg-mail">From:</label>
+                                <input id="default" placeholder="Your email here" name="email" type="email"
+                                    class="form-control w-75  d-flex my-1" />
+                            </div>
+                            <div class="bg-mail d-flex flex-row justify-content-between ">
+                                <label for="default" class="my-auto mx-auto d-flex bg-mail">Subject:</label>
+                                <input id="default" placeholder="Message Subject" name="subject" type="email"
+                                    class="form-control w-75  d-flex mt-1" />
+                            </div>
+
                         </div>
 
                     </div>
+                    <input type="hidden" value="https://digidaan.io/sites/classic" name="return"/>
 
-                </div>
-
-                <div class="col ">
-                    <label for="textarea" class="mr-3">Your Message:</label>
-                    <textarea id="textarea" class="form-control w-full" cols="30" rows="10"></textarea>
-                </div>
-                <!-- <div class="form-group d-flex justify-content-end mb-4">
+                    <div class="col ">
+                        <label for="textarea" class="mr-3">Your Message:</label>
+                        <textarea id="textarea" name="message" class="form-control w-full" cols="30" rows="10"></textarea>
+                    </div>
+                    <!-- <div class="form-group d-flex justify-content-end mb-4">
                     <div class="form-check">
                         <label class="form-check-label">
                             <input class="form-check-input" type="checkbox">
@@ -481,15 +485,18 @@
                         </label>
                     </div>
                 </div> -->
-                <div class="d-flex justify-content-end">
-                    <div class="d-flex">
-                        <button class="btn btn-sm mr-3 mt-1 btn-primary border-dark" type="button">
-                            <img src="img/sendmail.png" class="mail-send-icon mr-1 my-auto" /><span
-                                class="btn-text">Send</span>
-                        </button>
+                    <div class="d-flex justify-content-end">
+                        <div class="d-flex">
+                            <button class="g-recaptcha btn btn-sm mr-3 mt-1 btn-primary border-dark" type="submit"
+                            data-sitekey="6Lc8WFgnAAAAAFom8IjpTOXUrVUu0Dw1SftCMEda"
+                            data-callback='onRecaptchaSuccess'>
+                                <img src="img/sendmail.png" class="mail-send-icon mr-1 my-auto" /><span
+                                    class="btn-text">Send</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
 
         <!-- Computer Modal -->
@@ -773,17 +780,19 @@
                     data-dismiss="modal" aria-label="Close">-</button>
             </div>
             <div class="card-body w-auto overflow-auto">
-                <img class="w-100 sm-w-75 mx-auto d-block mb-2" src="./img/projects/pbma/pbma.png"
-                alt="pbma site">
-            <h2>PBMA</h2>
-            <p>
-                <a href="https://pgtveldhoven.nl/" target="_blank">The PBMA</a> is a website I developed for a Soil and Environmental Advisor.
-                I had previously developed the <a href="https://wimereux.nl/" target="_blank">Wimereux</a> website for the same client.
-                because of his positive experience with me, he asked me to develop a website for his new company as well.
-                After some iterations we landed on the current design.
-            </p>
+                <img class="w-100 sm-w-75 mx-auto d-block mb-2" src="./img/projects/pbma/pbma.png" alt="pbma site">
+                <h2>PBMA</h2>
+                <p>
+                    <a href="https://pgtveldhoven.nl/" target="_blank">The PBMA</a> is a website I developed for a Soil
+                    and Environmental Advisor.
+                    I had previously developed the <a href="https://wimereux.nl/" target="_blank">Wimereux</a> website
+                    for the same client.
+                    because of his positive experience with me, he asked me to develop a website for his new company as
+                    well.
+                    After some iterations we landed on the current design.
+                </p>
             </div>
-            </div>
+        </div>
         </div>
 
         <!-- PGT modal -->
@@ -799,15 +808,15 @@
                     data-dismiss="modal" aria-label="Close">-</button>
             </div>
             <div class="card-body w-auto overflow-auto">
-                <img class="w-100 sm-w-75 mx-auto d-block mb-2" src="./img/projects/pgt/pgt.png"
-                alt="pgt site">
-            <h2>PGT Veldhoven</h2>
-            <p>
-                <a href="https://pgtveldhoven.nl/" target="_blank">The PGT Veldhoven Website</a> is a website I developed for a therapist in Veldhoven.
-                She came to me with a request for a website but didn't have any specific requirements.
-                Together we came up with the name PGT Veldhoven and I started working on the website.
-                After some iterations we landed on the current design.
-            </p>
+                <img class="w-100 sm-w-75 mx-auto d-block mb-2" src="./img/projects/pgt/pgt.png" alt="pgt site">
+                <h2>PGT Veldhoven</h2>
+                <p>
+                    <a href="https://pgtveldhoven.nl/" target="_blank">The PGT Veldhoven Website</a> is a website I
+                    developed for a therapist in Veldhoven.
+                    She came to me with a request for a website but didn't have any specific requirements.
+                    Together we came up with the name PGT Veldhoven and I started working on the website.
+                    After some iterations we landed on the current design.
+                </p>
             </div>
         </div>
 
@@ -829,7 +838,8 @@
                     alt="Wimereux site">
                 <h2>Wimereux Website</h2>
                 <p>
-                    <a href="https://wimereux.nl/" target="_blank">The Wimereux Website</a> is a website designed to promote and facilitate the rental of a charming
+                    <a href="https://wimereux.nl/" target="_blank">The Wimereux Website</a> is a website designed to
+                    promote and facilitate the rental of a charming
                     holiday house located in the town of Wimereux, France.
                     I provided end-to-end support encompassing design, development, hosting, email integration, and an
                     overarching strategy to optimize conversions and enhance search engine visibility.
@@ -874,10 +884,14 @@
                     the owners and prospective guests.
                 </p>
                 <p>
-                    The Wimereux Website showcases my ability to deliver <span class="weight-bold">holistic web development</span> solutions that
-                    encompass <span class="weight-bold">design</span>,   <span class="weight-bold">functionality</span>,   <span class="weight-bold">hosting</span>, and   <span class="weight-bold">strategic optimization</span>. Through my
+                    The Wimereux Website showcases my ability to deliver <span class="weight-bold">holistic web
+                        development</span> solutions that
+                    encompass <span class="weight-bold">design</span>, <span class="weight-bold">functionality</span>,
+                    <span class="weight-bold">hosting</span>, and <span class="weight-bold">strategic
+                        optimization</span>. Through my
                     contributions, I successfully assisted the owners in establishing an impactful online presence,
-                    attracting guests, and ultimately   <span class="weight-bold">driving conversions</span> for their holiday house in Wimereux,
+                    attracting guests, and ultimately <span class="weight-bold">driving conversions</span> for their
+                    holiday house in Wimereux,
                     France.
                 </p>
             </div>
@@ -948,7 +962,27 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
 
+    <script>
+        function onRecaptchaSuccess() {
+        document.getElementById('contact-form').submit();
+      }
 
+      function getParameters() {
+        const currentUrl = window.location.href;
+        let paramString = currentUrl.split('?')[1];
+        let queryString = new URLSearchParams(paramString);
+        for(let pair of queryString.entries()) {
+            if(pair[0] == "success") {
+                if(pair[1] == "true") {
+                    alert("Your message has been sent!");
+                } else {
+                    alert("Something went wrong, please try again later.");
+                }
+            }
+        }
+    }
+    getParameters()
+      </script>
 
     <!-- Custom JS -->
     <script src="js/pixel.js"></script>

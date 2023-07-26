@@ -1,5 +1,7 @@
 const arrowBtn = document.querySelector('.arrows')
 
+
+
 // On click scroll down to 100vh below the top position
 arrowBtn.addEventListener('click', () => {
     window.scrollTo({

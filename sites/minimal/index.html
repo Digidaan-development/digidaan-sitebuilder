@@ -20,7 +20,7 @@
 </head>
 
 <body class="bg-gray-100 text-gray-700 dark:text-gray-300 dark:bg-gray-900 font-sans quicksand overflow-x-hidden">
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- First full page view with text in the middle -->
     <div class="flex items-center justify-center h-screen">
         <!-- logo top left -->
@@ -179,28 +179,34 @@
 
                 <div class="pt-1 px-4 mx-auto max-w-screen-md">
                     <p class="mb-2 font-light text-center sm:text-xl">You know how these work.</p>
-                    <form action="#" class="space-y-2">
+                    <form action="../../sendmail.php" method="post" id="contact-form" class="space-y-2">
                         <div>
                             <label for="email" class="block mb-2 text-sm font-medium ">Your email</label>
-                            <input type="email" id="email"
+                            <input type="email" id="email" name="email"
                                 class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                                 placeholder="your@email.com" required>
                         </div>
                         <div>
                             <label for="subject" class="block mb-2 text-sm font-medium ">Subject</label>
-                            <input type="text" id="subject"
+                            <input type="text" id="subject" name="subject"
                                 class="block p-3 w-full text-sm text-gray-900 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                                 placeholder="Cat stuck in tree" required>
                         </div>
                         <div class="sm:col-span-2">
                             <label for="message" class="block mb-2 text-sm font-medium ">Your message</label>
-                            <textarea id="message" rows="6"
+                            <textarea id="message" rows="6" name="message"
                                 class="block p-2.5 w-full text-sm text-gray-900 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                 placeholder="The important part...."></textarea>
                         </div>
-                        <button type="submit"
-                            class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send
-                            message</button>
+                        <input type="hidden" value="https://digidaan.io/sites/minimal" name="return"/>
+                            <button
+                            class="g-recaptcha py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                            type="submit"
+                            data-sitekey="6Lc8WFgnAAAAAFom8IjpTOXUrVUu0Dw1SftCMEda"
+                            data-callback='onRecaptchaSuccess'
+                            >
+                              Send Message
+                            </button>
                     </form>
                 </div>
                 <p class="mb-2 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">OR</p>
@@ -241,7 +247,26 @@
     <!-- inspiration: https://minimalissimo.shop/product/minimalist-writer-ii -->
 
     <script src="assets/js/script.js"></script>
-
+  <script>
+    function onRecaptchaSuccess() {
+    document.getElementById('contact-form').submit();
+  }
+  function getParameters() {
+        const currentUrl = window.location.href;
+        let paramString = currentUrl.split('?')[1];
+        let queryString = new URLSearchParams(paramString);
+        for(let pair of queryString.entries()) {
+            if(pair[0] == "success") {
+                if(pair[1] == "true") {
+                    alert("Your message has been sent!");
+                } else {
+                    alert("Something went wrong, please try again later.");
+                }
+            }
+        }
+    }
+    getParameters()
+  </script>
 </body>
 
 </html>
