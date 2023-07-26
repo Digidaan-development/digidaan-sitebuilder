@@ -1,0 +1,111 @@
+
+
+body * {
+    @apply transition-colors duration-200;
+}
+.quicksand {
+    font-family: 'Nunito', sans-serif;
+}
+
+::selection {
+    background: #E9D8FD;
+color:#202684;
+
+    /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+    background: #E9D8FD;
+color:#202684;
+    /* Gecko Browsers */
+}
+
+a:not(.nav) {
+    font-weight: bold;
+    text-decoration: none;
+    padding: 2px;
+    background: linear-gradient(to right, #5A67D8, #5A67D8);
+    background-repeat: repeat-x;
+    background-size: 100% 2px;
+    background-position: 0 95%;
+    -webkit-transition: all 150ms ease-in-out;
+    -moz-transition: all 150ms ease-in-out;
+    -ms-transition: all 150ms ease-in-out;
+    -o-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+}
+
+a:hover {
+    color: #B794F4;
+    font-weight: bold;
+    text-decoration: none;
+    padding-bottom: 2px;
+    background: linear-gradient(to right, #9F7AEA, #E9D8FD);
+    background-repeat: repeat-x;
+    background-size: 100% 2px;
+    background-position: 50% 95%;
+    -webkit-transition: color 150ms ease-in-out;
+    -moz-transition: color 150ms ease-in-out;
+    -ms-transition: color 150ms ease-in-out;
+    -o-transition: color 150ms ease-in-out;
+    transition: color 150ms ease-in-out;
+}
+
+a:focus {
+    outline: none;
+    background: #E9D8FD;
+}
+
+  
+  .arrows {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      left: 50%;
+      margin-left: -20px;
+      bottom: 20px;
+      cursor: pointer;
+  }
+
+  .sunglasses{
+      width: 300px;
+      position: absolute;
+      left: 50%;
+      margin-left: -150px;
+      bottom: 60px;
+  }
+
+   
+  .arrows path {
+      fill: transparent;
+      stroke-width: 3px;	
+      animation: arrow 2s infinite;
+      -webkit-animation: arrow 2s infinite; 
+  }
+
+  
+  
+  
+  @keyframes arrow
+  {
+  0% {opacity:0; transform:translateY(10px)}
+  80% {opacity:1; transform:translateY(50px)}
+  100% {opacity:0; transform:translateY(50px)}
+  }
+  
+  @-webkit-keyframes arrow /*Safari and Chrome*/
+  {
+  0% {opacity:0; transform:translateY(10px)}
+  80% {opacity:1; transform:translateY(50px)}
+  100% {opacity:0; transform:translateY(50px)}
+  }
+  
+  .arrows path.a1 {
+      animation-delay:-0.5s;
+      -webkit-animation-delay:-0.5s; /* Safari and Chrome */
+  }
+
+
+  :root{
+    --bs-dark: #212529;
+  }

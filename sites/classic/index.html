@@ -255,13 +255,7 @@
                             <span class="d-block w-auto text-center mx-auto row pt-1">Wimereux</span>
                         </div>
                     </div>
-                    <!-- <div class="col-6 col-md-4 col-lg-3 explorer-file mx-1">
-                        <div class="col align-middle w95-file-icon">
-                            <img src="./img/logo-w95.png" class="w95-file-icon-img mx-auto row">
-                            <span class="d-block w-auto text-center mx-auto row pt-1">Digidaan</span>
-                        </div>
-                    </div> -->
-                    <div class="col-6 col-md-4 col-lg-3 explorer-file mx-1">
+                    <div onclick="openModal('contactModal')" class="col-6 col-md-4 col-lg-3 explorer-file mx-1">
                         <div class="col align-middle w95-file-icon">
                             <img src="./img/help_question_mark-0.png" class="w95-file-icon-img mx-auto row">
                             <span class="d-block w-auto text-center mx-auto row pt-1">Your project</span>
@@ -550,7 +544,7 @@
         </div>
 
 
-        <!-- Project modals -->
+        <!-- Pvsafe modal -->
         <div class="modal sm-w-75 w-100 w95-window card card-tertiary h-75" data-backdrop="false"
             onclick="selectModal('pvsafeModal')" id="pvsafeModal" tabindex="-1" role="dialog"
             aria-labelledby="profileModalLabel">
@@ -650,6 +644,7 @@
             </div>
         </div>
 
+        <!-- Summa modal -->
         <div class="modal w95-window card card-tertiary sm-w-50 w-100 h-75" data-backdrop="false"
             onclick="selectModal('summaModal')" id="summaModal" tabindex="-1" role="dialog"
             aria-labelledby="profileModalLabel">
@@ -694,7 +689,8 @@
                                 <span class="sr-only">Link to heading</span></a>
                         </h3>
                         <p>
-                            <img class="sm-w-75 w-100 mx-auto d-block w95-border my-2" src="./img/projects/summa/kaartspel-login.png" alt="Kaartspel Inlogpagine">
+                            <img class="sm-w-75 w-100 mx-auto d-block w95-border my-2"
+                                src="./img/projects/summa/kaartspel-login.png" alt="Kaartspel Inlogpagine">
                         </p>
                         <p>
                             The Summa College also sells the rights of the card game to other agencies. It must
@@ -705,7 +701,8 @@
                         </p>
                         <h3 id="step-2-identify-impediments">Step 2. Identify Impediments</h3>
                         <p>
-                            <img class="sm-w-75 w-100 mx-auto d-block w95-border my-2" src="./img/projects/summa/belemmeringen.png" alt="Kaartspel Belemmeringen">
+                            <img class="sm-w-75 w-100 mx-auto d-block w95-border my-2"
+                                src="./img/projects/summa/belemmeringen.png" alt="Kaartspel Belemmeringen">
                         </p>
                         <p>
                             The students get to see each impediment once. They can indicate whether or not this
@@ -718,7 +715,8 @@
                                 <span class="sr-only">Link to heading</span></a>
                         </h3>
                         <p>
-                            <img class="sm-w-75 w-100 mx-auto d-block w95-border my-2" src="./img/projects/summa/oplossing-1.PNG" alt="Kaartspel Oplossingen">
+                            <img class="sm-w-75 w-100 mx-auto d-block w95-border my-2"
+                                src="./img/projects/summa/oplossing-1.PNG" alt="Kaartspel Oplossingen">
                         </p>
                         <p>
                             After the impediments have been determined, the students can identify possible
@@ -736,11 +734,13 @@
                             solutions become.
                         </p>
                         <p>
-                            <img class="sm-w-75 w-100 mx-auto d-block w95-border my-2" src="./img/projects/summa/oplossing-2.PNG" alt="Kaartspel Oplissingen 2">
+                            <img class="sm-w-75 w-100 mx-auto d-block w95-border my-2"
+                                src="./img/projects/summa/oplossing-2.PNG" alt="Kaartspel Oplissingen 2">
                         </p>
                         <h3 id="step-4-couple-executors">Step 4. Couple Executors</h3>
                         <p>
-                            <img class="sm-w-75 w-100 mx-auto d-block w95-border my-2" src="./img/projects/summa/uitvoerders.PNG" alt="Kaartspel Uitvoerders">
+                            <img class="sm-w-75 w-100 mx-auto d-block w95-border my-2"
+                                src="./img/projects/summa/uitvoerders.PNG" alt="Kaartspel Uitvoerders">
                         </p>
                         <p>
                             As a final step, the executors are linked to the solutions. This is a similiar
@@ -749,7 +749,8 @@
                         </p>
                         <h3 id="step-5-results">Step 5. Results</h3>
                         <p>
-                            <img class="sm-w-75 w-100 mx-auto d-block w95-border my-2" src="./img/projects/summa/kaartspel-uitvoer.png" alt="Kaartspel Uitvoer">
+                            <img class="sm-w-75 w-100 mx-auto d-block w95-border my-2"
+                                src="./img/projects/summa/kaartspel-uitvoer.png" alt="Kaartspel Uitvoer">
                         </p>
                         <p>
                             Finally, all cards are placed in a table. The student can then print this table.
@@ -758,7 +759,8 @@
             </div>
         </div>
 
-        <div class="modal w95-window card card-tertiary w-auto h-auto" data-backdrop="false"
+        <!-- PBMA modal -->
+        <div class="modal w95-window card card-tertiary sm-w-50 w-100 h-auto" data-backdrop="false"
             onclick="selectModal('pbmaModal')" id="pbmaModal" tabindex="-1" role="dialog"
             aria-labelledby="profileModalLabel">
             <div class="card-header">
@@ -770,12 +772,22 @@
                 <button class="close btn minimize-button px-2 py-1 mr-1 h-100 w95-modal-close" type="button"
                     data-dismiss="modal" aria-label="Close">-</button>
             </div>
-            <div class="card-body w-auto overflow-visible">
-                <h2>PBMA</h2>
+            <div class="card-body w-auto overflow-auto">
+                <img class="w-100 sm-w-75 mx-auto d-block mb-2" src="./img/projects/pbma/pbma.png"
+                alt="pbma site">
+            <h2>PBMA</h2>
+            <p>
+                <a href="https://pgtveldhoven.nl/" target="_blank">The PBMA</a> is a website I developed for a Soil and Environmental Advisor.
+                I had previously developed the <a href="https://wimereux.nl/" target="_blank">Wimereux</a> website for the same client.
+                because of his positive experience with me, he asked me to develop a website for his new company as well.
+                After some iterations we landed on the current design.
+            </p>
+            </div>
             </div>
         </div>
 
-        <div class="modal w95-window card card-tertiary w-auto h-auto" data-backdrop="false"
+        <!-- PGT modal -->
+        <div class="modal w95-window card card-tertiary sm-w-50 w-100 h-auto" data-backdrop="false"
             onclick="selectModal('pgtModal')" id="pgtModal" tabindex="-1" role="dialog"
             aria-labelledby="profileModalLabel">
             <div class="card-header">
@@ -786,26 +798,90 @@
                 <button class="close btn minimize-button px-2 py-1 mr-1 h-100 w95-modal-close" type="button"
                     data-dismiss="modal" aria-label="Close">-</button>
             </div>
-            <div class="card-body w-auto overflow-visible">
-                <h2>PGT Veldhoven</h2>
+            <div class="card-body w-auto overflow-auto">
+                <img class="w-100 sm-w-75 mx-auto d-block mb-2" src="./img/projects/pgt/pgt.png"
+                alt="pgt site">
+            <h2>PGT Veldhoven</h2>
+            <p>
+                <a href="https://pgtveldhoven.nl/" target="_blank">The PGT Veldhoven Website</a> is a website I developed for a therapist in Veldhoven.
+                She came to me with a request for a website but didn't have any specific requirements.
+                Together we came up with the name PGT Veldhoven and I started working on the website.
+                After some iterations we landed on the current design.
+            </p>
             </div>
+        </div>
 
-            <div class="modal w95-window card card-tertiary w-auto h-auto" data-backdrop="false"
-                onclick="selectModal('wimereuxModal')" id="wimereuxModal" tabindex="-1" role="dialog"
-                aria-labelledby="profileModalLabel">
-                <div class="card-header">
-                    <img class="icon icon-xs w95-folder" src="img/address_book_home.png" />
-                    <span class="ml-4">Wimereux</span>
-                    <button onclick="closeModal('wimereuxModal')"
-                        class="close btn close-button px-1 py-1  h-100 w95-modal-close" type="button"
-                        data-dismiss="modal" aria-label="Close">X</button>
-                    <button class="close btn minimize-button px-2 py-1 mr-1 h-100 w95-modal-close" type="button"
-                        data-dismiss="modal" aria-label="Close">-</button>
-                </div>
-                <div class="card-body w-auto overflow-visible">
-                    <h2>Wimereux</h2>
-                </div>
+        <!-- Wimereux modal -->
+        <div class="modal w95-window card card-tertiary sm-w-50 w-100 h-75" data-backdrop="false"
+            onclick="selectModal('wimereuxModal')" id="wimereuxModal" tabindex="-1" role="dialog"
+            aria-labelledby="profileModalLabel">
+            <div class="card-header">
+                <img class="icon icon-xs w95-folder" src="img/address_book_home.png" />
+                <span class="ml-4">Wimereux</span>
+                <button onclick="closeModal('wimereuxModal')"
+                    class="close btn close-button px-1 py-1  h-100 w95-modal-close" type="button" data-dismiss="modal"
+                    aria-label="Close">X</button>
+                <button class="close btn minimize-button px-2 py-1 mr-1 h-100 w95-modal-close" type="button"
+                    data-dismiss="modal" aria-label="Close">-</button>
             </div>
+            <div class="card-body w-auto overflow-auto">
+                <img class="w-100 sm-w-75 mx-auto d-block mb-2" src="./img/projects/wimereux/wimereux.png"
+                    alt="Wimereux site">
+                <h2>Wimereux Website</h2>
+                <p>
+                    <a href="https://wimereux.nl/" target="_blank">The Wimereux Website</a> is a website designed to promote and facilitate the rental of a charming
+                    holiday house located in the town of Wimereux, France.
+                    I provided end-to-end support encompassing design, development, hosting, email integration, and an
+                    overarching strategy to optimize conversions and enhance search engine visibility.
+                </p>
+                <h4>Collaboration</h4>
+                <p>
+                    <span class="weight-bold">Collaborating</span> closely with the owners, my primary objective was to
+                    create a <span class="weight-bold">visually appealing
+                        and user-friendly</span> website that would captivate potential guests and encourage bookings.
+                    By
+                    leveraging my expertise in <span class="weight-bold">web development and design</span>, I crafted an
+                    <span class="weight-bold">intuitive</span> and
+                    **immersive** user experience that showcased the unique features and allure of the holiday house.
+                </p>
+
+                <h4>Optimization</h4>
+                <p>
+                    Furthermore, I implemented effective strategies to maximize conversions, ensuring that visitors to
+                    the website were seamlessly guided towards the booking process. By employing persuasive
+                    call-to-action elements and incorporating user-friendly booking forms, I aimed to streamline the
+                    conversion journey and boost rental inquiries.
+                </p>
+
+                <p>
+                    To enhance the website's <span class="weight-bold">discoverability</span>, I devised a comprehensive
+                    <span class="weight-bold">search engine optimization
+                        (SEO)</span> strategy. This involved optimizing the website's <span
+                        class="weight-bold">structure</span>, <span class="weight-bold">meta tags</span>, and
+                    <span class="weight-bold">content</span> to improve its ranking on search engine results pages. By
+                    targeting relevant keywords
+                    and implementing best practices, I aimed to <span class="weight-bold">increase traffic</span> and
+                    attract a wider audience of
+                    potential guests.
+                </p>
+
+                <h4>Stability</h4>
+                <p>Additionally, I managed the <span class="weight-bold">hosting</span> and
+                    <span class="weight-bold">email integration</span> aspects of the project, ensuring a
+                    <span class="weight-bold">reliable</span> and <span class="weight-bold">seamless</span> online
+                    presence for the owners. By utilizing robust cloud-based
+                    hosting solutions and configuring email systems, I facilitated the communication channels between
+                    the owners and prospective guests.
+                </p>
+                <p>
+                    The Wimereux Website showcases my ability to deliver <span class="weight-bold">holistic web development</span> solutions that
+                    encompass <span class="weight-bold">design</span>,   <span class="weight-bold">functionality</span>,   <span class="weight-bold">hosting</span>, and   <span class="weight-bold">strategic optimization</span>. Through my
+                    contributions, I successfully assisted the owners in establishing an impactful online presence,
+                    attracting guests, and ultimately   <span class="weight-bold">driving conversions</span> for their holiday house in Wimereux,
+                    France.
+                </p>
+            </div>
+        </div>
         </div>
 
 
