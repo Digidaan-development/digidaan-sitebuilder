@@ -1,6 +1,7 @@
 const arrowBtn = document.querySelector('.arrows')
 
-
+// Favicon 
+const faviconEl = document.querySelector('link[rel="icon"]')
 
 // On click scroll down to 100vh below the top position
 arrowBtn.addEventListener('click', () => {
@@ -47,9 +48,11 @@ function themeToggle() {
     if (localStorage.getItem('color-theme')) {
         if (localStorage.getItem('color-theme') === 'light') {
             document.documentElement.classList.add('dark');
+            faviconEl.setAttribute('href', '../img/favicon-dark.png')
             localStorage.setItem('color-theme', 'dark');
         } else {
             document.documentElement.classList.remove('dark');
+            faviconEl.setAttribute('href', '../img/favicon-light.png')
             localStorage.setItem('color-theme', 'light');
         }
 
